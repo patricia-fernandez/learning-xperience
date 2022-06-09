@@ -1,0 +1,25 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: tuto-angular-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tuto-angular
+  template:
+    metadata:
+      labels:
+        app: tuto-angular
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: tuto-angular-frontend
+        image: ghcr.io/patricia-fernandez/tuto-angular
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
