@@ -1,22 +1,22 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: tuto-angular-deploy
+  name: machine-xperience-frontend-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tuto-angular
+      app: machine-xperience-frontend
   template:
     metadata:
       labels:
-        app: tuto-angular
+        app: machine-xperience-frontend
     spec:
       imagePullSecrets:
       - name: regcred
       containers:
-      - name: tuto-angular-frontend
-        image: ghcr.io/patricia-fernandez/tuto-angular
+      - name: machine-xperience-frontend-frontend
+        image: ghcr.io/patricia-fernandez/machine-xperience-frontend
         ports:
           - containerPort: 80
         resources:

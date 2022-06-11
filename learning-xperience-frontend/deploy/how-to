@@ -1,0 +1,14 @@
+1. cd /machine-xperience-frontend
+2. Check Dockerfile
+3. Run "docker build . -t machine-xperience-frontend:latest"
+4. Rum "docker run --name machine-xperience-frontend-container -d -p 4200:80 machine-xperience-frontend" to test locally
+5. Tag image "docker tag machine-xperience-frontend:latest ghcr.io/patricia-fernandez/machine-xperience-frontend:latest"
+6. Push image to registry "docker push ghcr.io/patricia-fernandez/machine-xperience-frontend:latest"
+7. cd /deploy
+8. Test local: "minikube start" and "minikube dashboard"
+9. . regcred.sh
+10. kubectl apply -f machine-xperience-frontend-deployment.yaml
+11. kubectl apply -f machine-xperience-frontend-service.yaml
+12. minikube service machine-xperience-frontend-service --url 
+13. Open service URL in browser to check it's working
+

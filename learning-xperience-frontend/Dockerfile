@@ -8,4 +8,4 @@ COPY . /app
 RUN npm run build --omit=dev
 # step 2
 FROM nginx:1.22.0-alpine
-COPY --from=build-step /app/dist/tuto-angular /usr/share/nginx/html
+COPY --from=build-step /app/dist/machine-xperience-frontend /usr/share/nginx/html
