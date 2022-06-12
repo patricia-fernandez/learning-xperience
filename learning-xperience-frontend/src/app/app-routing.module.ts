@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TaskboardComponent } from './taskboard/taskboard.component';
 
 const routes: Routes = [
-  {path: "", pathMatch: "full", redirectTo: "taskboard"},
-  {path: "taskboard", component: TaskboardComponent}
+  {path: "", pathMatch: "full", redirectTo: "home"},
+  {path: "home", component: TaskboardComponent}
 ];
 
 @NgModule({

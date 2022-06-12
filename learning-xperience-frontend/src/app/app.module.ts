@@ -12,12 +12,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 
-import { TaskboardModule } from './taskboard/taskboard.module';
+import { TaskboardComponent } from './taskboard/taskboard.component';
+import { TaskboardService } from './taskboard/taskboard.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaskboardComponent,
   ],
   imports: [
     HttpClientModule,
@@ -29,11 +31,9 @@ import { TaskboardModule } from './taskboard/taskboard.module';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule,
-
-    TaskboardModule
+    MatButtonModule
   ],
-  providers: [],
+  providers: [TaskboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
